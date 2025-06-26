@@ -1,0 +1,392 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+header {
+  background-color: #e62429;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(230, 36, 41, 0.6);
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 25px;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+
+
+
+.inicio {
+  height: 100vh;
+  background-image: url('/static/image/marvel.jpg'); /* imagem com heróis ou fundo espacial */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* escurece a imagem para melhor contraste */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.container-inicio h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.container-inicio p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.btn {
+  background-color: #e62429;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c3161f;
+  transform: scale(1.05);
+}
+
+
+
+.sobre {
+  background-color: #121212;
+  color: white;
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.container-sobre {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sobre h2 {
+  color: #e62429;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #e62429;
+}
+
+.conteudo-sobre {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.conteudo-sobre img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(230, 36, 41, 0.6);
+  object-fit: cover;
+}
+
+.conteudo-sobre img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(230, 36, 41, 0.9);
+}
+
+.texto-sobre {
+  max-width: 550px;
+}
+
+.texto-sobre p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Responsivo para telas pequenas */
+
+@media (max-width: 768px) {
+  .conteudo-sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texto-sobre p {
+    text-align: center;
+  }
+
+  .texto-sobre {
+    max-width: 100%;
+  }
+}
+
+
+.personagens {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(230, 36, 41, 0.6);
+  overflow: hidden;
+  width: 100%;
+  max-width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #e62429;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card .descricao {
+  padding: 0 15px 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ddd;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  text-align: center;
+}
+
+/* Mostrar descrição ao passar o mouse no card */
+.card:hover .descricao {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Efeito hover no card */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(230, 36, 41, 0.8);
+}
+
+
+.personagens-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.personagens-container h2 {
+  color: #e62429;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #e62429;
+}
+
+.personagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(230, 36, 41, 0.6);
+  overflow: hidden;
+  width: 100%;
+  max-width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #e62429;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card .descricao {
+  padding: 0 15px 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ddd;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  text-align: center;
+}
+
+/* Mostrar descrição ao passar o mouse no card */
+.card:hover .descricao {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Efeito hover no card */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(230, 36, 41, 0.8);
+}
+
+
+
+footer {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #bbb;
+  box-shadow: inset 0 2px 8px rgba(230, 36, 41, 0.6);
+  letter-spacing: 1.1px;
+  position: relative;
+  user-select: none;
+}
+
+footer p {
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ddd;
+  text-shadow:
+    0 0 6px #e62429,
+    0 0 12px #b22222;
+}
+
+
+
+
+
+.curiosidades {
+  background-color: #121212;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.container-curiosidades {
+  max-width: 1000px;
+  margin: 0 auto; /* centraliza horizontalmente */
+  text-align: center;
+}
+
+.container-curiosidades h2 {
+  font-size: 36px;
+  color: #e62429;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #e62429;
+}
+
+.lista-curiosidades {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.curio {
+  background-color: #1f1f1f;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(230, 36, 41, 0.3);
+  font-size: 18px;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curio:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.5);
+}
